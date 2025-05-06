@@ -1,6 +1,7 @@
 import express from "express";
 import url from "url";
 import path from "path";
+import logger from "./middleware/loggerMiddleware.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -23,6 +24,8 @@ const messages = [
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+app.use(logger);
 
 app.get("/", (req, res) => {
     res.render("index", { messages: messages, title: "Messages" });
