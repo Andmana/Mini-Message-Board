@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Gill Sans", sans-serif;
+    background-color: #171717;
+    color: #f1f5f9;
+    line-height: 1.5;
+}
+
+header {
+    margin: 20px auto;
+}
+header h1 {
+    text-align: center;
+    color: greenyellow;
+}
+
+#messages-board {
+    width: 1400px;
+    margin: 20px auto;
+    columns: 3;
+    column-gap: 20px;
+}
+
+.box {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 6px solid green;
+    border-radius: 15px;
+    padding: 1rem;
+    break-inside: avoid;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.box-date {
+    text-align: end;
+    color: rgba(255, 255, 255, 0.685);
+    font-size: 1.05rem;
+}
+
+.box-text {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.box-name {
+    text-align: center;
+    font-size: 1.15rem;
+}

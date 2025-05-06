@@ -2,6 +2,7 @@ import express from "express";
 import url from "url";
 import path from "path";
 import logger from "./middleware/loggerMiddleware.js";
+import dateFormat from "./utils/dateFormat.js";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -22,13 +23,22 @@ const messages = [
     },
 ];
 
+// Set up view engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Serve static files from the "public" folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Middleware
 app.use(logger);
 
 app.get("/", (req, res) => {
-    res.render("index", { messages: messages, title: "Messages" });
+    res.render("index", {
+        messages: messages,
+        title: "Messages",
+        dateFormat: dateFormat,
+    });
 });
 
 app.listen(PORT);
