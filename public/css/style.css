@@ -131,10 +131,9 @@ header h1 {
 }
 
 #create-message-form {
-    margin: auto;
+    margin: 20px auto 50px;
     width: 320px;
     height: 100%;
-    margin: auto;
 }
 
 .form-group {
@@ -142,6 +141,12 @@ header h1 {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+}
+
+.form-action {
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 .form-group label {
@@ -171,7 +176,7 @@ a {
     text-decoration: unset;
 }
 
-#create-message-anchor {
+.link-anchor {
     border: 2px solid green;
     padding: 8px 8px 4px;
 }
