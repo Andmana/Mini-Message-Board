@@ -27,6 +27,9 @@ const messages = [
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+// Setup form req
+app.use(express.urlencoded({ extended: true }));
+
 // Serve static files from the "public" folder
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -43,6 +46,14 @@ app.get("/", (req, res) => {
 
 app.get("/new", (req, res) => {
     res.render("new");
+});
+
+app.post("/new", (req, res) => {
+    const user = req.body.user.trim();
+    const text = req.body.text.trim();
+
+    messages.push({ user, text, added: new Date() });
+    res.redirect(301, "/");
 });
 
 app.listen(PORT);
