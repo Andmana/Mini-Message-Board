@@ -11,12 +11,18 @@
             <header>
                 <h1><%= title %></h1>
             </header>
+
+            <!-- -->
+            <div class="center-div">
+                <a href="/new" id="create-message-anchor">Create Messages</a>
+            </div>
+
             <div id="messages-board">
                 <% messages.map((message) => { %>
                 <div class="box">
                     <p class="box-date"><%= dateFormat( message.added) %></p>
                     <p class="box-text"><%= message.text %></p>
-                    <p class="box-name">─<%= message.user %></p>
+                    <p class="box-name">─ <%= message.user %></p>
                 </div>
                 <% }) %>
             </div>
