@@ -7,7 +7,7 @@ import dateFormat from "./utils/dateFormat.js";
 import dotenv from "dotenv";
 
 dotenv.config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const app = express();
 
 const __filename = url.fileURLToPath(import.meta.url);
