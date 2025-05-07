@@ -97,8 +97,29 @@ header h1 {
 #messages-board {
     width: 1400px;
     margin: 20px auto;
-    columns: 3;
+    columns: 4;
     column-gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    #messages-board {
+        width: calc(100% - 40px);
+        columns: 3;
+    }
+}
+
+@media (max-width: 900px) {
+    #messages-board {
+        width: calc(100% - 40px);
+        columns: 2;
+    }
+}
+
+@media (max-width: 540px) {
+    #messages-board {
+        width: calc(100% - 40px);
+        columns: 1;
+    }
 }
 
 .box {
@@ -121,7 +142,7 @@ header h1 {
 }
 
 .box-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 

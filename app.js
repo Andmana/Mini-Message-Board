@@ -21,6 +21,12 @@ const messages = [
         user: "Charles",
         added: new Date(),
     },
+
+    {
+        text: "lorem ipsum",
+        user: "Charles",
+        added: new Date(),
+    },
 ];
 
 // Set up view engine
