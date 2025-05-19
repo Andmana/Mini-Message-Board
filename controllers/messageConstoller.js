@@ -33,7 +33,7 @@ export const postNewMessage = async (req, res) => {
   const text = req.body.text.trim();
 
   // Add new message to the list with a timestamp
-  messageRepository.createMessage(username, text);
+  await messageRepository.createMessage(username, text);
 
   // Redirect to home after submission
   res.redirect(301, "/");
