@@ -1,30 +1,13 @@
+import messageRepository from "../repositories/messageRepository.js";
 import dateFormat from "../utils/dateFormat.js";
-
-// Array to store messages
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-
-  {
-    text: "lorem ipsum",
-    user: "Charles",
-    added: new Date(),
-  },
-];
 
 /**
  * GET /
  * Renders the homepage with a list of all messages.
  */
-export const getMessages = (req, res) => {
+export const getMessages = async (req, res) => {
+  const messages = await messageRepository.getAllMessages();
+
   res.render("index", {
     messages: messages,
     title: "Messages",
@@ -45,12 +28,12 @@ export const renderNewMessageForm = (req, res) => {
  * Handles submission of the new message form.
  * Trims input, adds message to the in-memory array, and redirects to home.
  */
-export const postNewMessage = (req, res) => {
-  const user = req.body.user.trim();
+export const postNewMessage = async (req, res) => {
+  const username = req.body.username.trim();
   const text = req.body.text.trim();
 
   // Add new message to the list with a timestamp
-  messages.push({ user, text, added: new Date() });
+  messageRepository.createMessage(username, text);
 
   // Redirect to home after submission
   res.redirect(301, "/");
