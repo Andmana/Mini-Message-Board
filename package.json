@@ -2,13 +2,11 @@
   "name": "mini-message-board",
   "version": "1.0.0",
   "description": "The Odin Project - Mini Message Board",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
-    "start": "node app.js",
-    "populate": "node db/populatedb.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +23,6 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "express-async-handler": "^1.2.0",
     "moment": "^2.30.1",
     "pg": "^8.16.0"
   },
